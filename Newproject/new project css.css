@@ -1,0 +1,639 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:rgb(255, 251, 251);
+}
+html{
+    scroll-behavior: smooth;
+}
+/* landing section */
+
+.open{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 10000;
+
+}
+.open .layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    animation: open 1s ease-in-out forwards;
+
+}
+.open .layer:nth-child(1){
+    background: white;
+    z-index: 2;
+}
+.open .layer:nth-child(2){
+    background: black;
+    z-index: 1;
+    animation-delay: 1s;
+}
+@keyframes open{
+    0%{
+      transform: scaleY(1);  
+    }
+    100%{
+        transform: scaleY(0);
+
+    }
+}
+
+
+
+
+
+
+/* navigation section */
+header{
+    display: flex;
+    flex-direction: row;
+    height: 39px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+}
+header.sticky{
+    background-color: rgb(255, 251, 251);
+}
+.social{
+    margin-left: 1120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .social img:hover{
+    /* filter: brightness(50); 
+} */
+.social img{
+    height: 25px;
+    width: 25px;
+    padding: 3px;
+    opacity: 0;
+    animation: interbottom2 1s linear forwards;
+    animation-delay: 5s;
+    display: flex;
+
+}
+@keyframes interbottom2{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+             
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+header .logo a{
+    font-family: 'Righteous', cursive;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+header .logo a h3{
+    padding-left: 10px;
+    transition: .8s;
+    opacity: 0;
+    animation: interbottom 1s linear forwards;
+    animation-delay: 4s;
+}
+@keyframes interbottom{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+             
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+header .logo a h3:hover{
+    text-shadow: 2px 2px 5px grey;
+}
+
+
+
+
+
+
+
+
+/* home section */
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 211px;
+    width: 100%;
+    background: url("wave (2).svg");
+    background-size: cover;
+
+
+
+}
+#home .navigation{
+    list-style: none;
+    height: 600px;
+    width: 455px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    justify-content: center;
+    
+}
+
+#home .navigation ul li {
+    list-style: none;
+    font-size: 2rem;
+    padding: 3px;
+
+}
+
+
+#home .navigation ul li a{
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    opacity: 0;
+    transition: .5s;
+    animation: interbottom1 0.5s linear forwards;
+    animation-delay: 3s;
+    display: flex;
+}
+@keyframes interbottom1{
+    0%{
+        opacity: 0;
+        transform: translateY(150px);
+             
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home .navigation ul li a:hover{
+    text-shadow: 2px 2px 6px black;
+}
+#home .intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 333px;
+    margin: 0px 120px;
+    text-align: center;
+    
+
+}
+
+#home .box{
+    background-color: black;
+    height: 200px;
+    width: 3px;
+    margin-left: 30px;
+    margin-block-end: -68px;
+       
+}
+#home .box1{
+    background-color: black;
+    height: 200px;
+    width: 3px;
+       
+}
+
+
+.h1{
+    font-size: 3rem;
+    font-family: 'Bangers';
+    /* text-shadow:  2px 5px 6px grey ;  */
+    padding-bottom: 30px;
+    opacity: 0;
+    animation: fadein1 1s linear forwards;
+    animation-delay: 2s;
+
+}
+@keyframes fadein1{
+    0%{
+        opacity: 0;
+
+    }
+    100%{
+        opacity: 1;
+        text-shadow:  2px 5px 6px grey ;
+    }
+}
+#home .intro p{
+    font-size: 1.5rem;
+    font-family: 'Zilla+Slab',serif;
+    opacity: 0;
+    animation: fadein 1s linear forwards;
+    animation-delay: 3.5s;
+
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* work section */
+#work-section{
+    background-color: black;
+}
+
+#work{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 98vw;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+   
+}
+
+
+.card{
+    display: grid;
+    grid-template-columns: 400px;
+    grid-template-rows: 400px 70px;
+    grid-template-areas: "image" ;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 20px;
+    background: rgb(218, 216, 216);
+    /* box-shadow: 2px 2px 5px rgb(78, 77, 77); */
+    text-align: center;
+    transition: .5s ease;
+    cursor: pointer;
+    margin: 0px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-image{
+    grid-area: image;
+    background: url("food.png");
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-image2{
+    grid-area: image;
+    background: url("new.png");
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-image3{
+    grid-area: image;
+    background: url("UI.png");
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-text h2{
+    margin-top: px;
+}
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px black;
+}
+
+/* client section */
+#client-section{
+    background: black;
+}
+
+#client{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background: black;
+}
+
+.ul{
+    position: absolute;
+    top: 230px;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: 150px;
+    animation: 1s ease-in-out forwards;
+    animation-delay: 4s;
+    
+}
+
+.ul li{
+    list-style: none;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: grey;
+    transform: rotate(45deg);
+    margin: 50px;
+    transition: .5s;
+    overflow: hidden;
+    opacity: .8;
+    border: 2px solid white;}
+.ul li:hover{
+    opacity: 3;
+    
+}
+ul li.item-1{
+    top: 0;
+    left: 0;
+    
+}
+ul li.item-2{
+    bottom: 0;
+    left: 25%;
+
+}
+ul li.item-8{
+    top: 100%;
+    left: 25%;
+
+}
+ul li.item-3{
+    top: 0;
+    left: 50%;
+    
+}
+ul li.item-4{
+    bottom: 0;
+    left: 75%;
+
+}
+ul li.item-9{
+    top: 100%;
+    left: 75%;
+
+}
+ul li.item-5{
+    top: 0;
+    left: 100%;
+    
+}
+ul li.item-6{
+    bottom: 0;
+    left: 125%;
+
+}
+ul li.item-10{
+    top: 100%;
+    left: 125%;
+
+}
+ul li.item-7{
+    top: 0;
+    left: 150%;
+    
+}
+.ul .bg{
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg) scale(1.42);
+    
+}
+
+.ul .item-1 .bg{
+    background: url("mak\ tech\ logo.png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-2 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-8 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-9 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-10 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-3 .bg{
+    background: url("cg1.png");
+    background-size: cover;
+    filter: invert(1);
+}
+.ul .item-4 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+
+}
+.ul .item-5 .bg{
+    background: url("mak\ tech\ logo.png");
+    background-size: cover;
+    filter: invert(1);
+
+}
+.ul .item-6 .bg{
+    background: url("M.Karimi\ \(2\).png");
+    background-size: cover;
+    filter: invert(1);
+
+}
+.ul .item-7 .bg{
+    background: url("cg1.png");
+    background-size: cover;
+    filter: invert(1);
+
+}
+
+/* contact us section */
+#contact-section{
+    background: black;
+    
+}
+#contact{
+    display:grid;
+    flex-direction: row;
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* position: relative; */
+    background: black;
+    display: grid; 
+    grid-template-columns: 400px 400px;
+    grid-template-areas: "message" "About";
+
+}
+.contact-form{
+    grid-area: message;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+    
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form label{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-family: cursive;
+    background: none;
+    color: white;
+
+}
+.contact-details{
+    grid-area: "About";
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 70px 70px 70px;
+    grid-template-areas: "location" "personal" "follow";
+}
+
+.address{
+    grid-area: location;
+    /* display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center; */
+}
+
+.personal{
+    grid-area: personal;
+    justify-content: start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    
+}
+.follow{
+    grid-area: follow;
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    justify-content: center;
+    align-items: center;
+    
+}
+.follow img{
+    height: 30px;
+    padding: 0px 5px ;
+    transition: .3s;
+}
+.follow img:hover{
+    filter: invert(1);
+    
+}
+
+
+
+
+
+/* utility class */
+.head{
+    color: rgb(255, 251, 251);
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.para{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: gray;
+}
+.btn2{
+    margin: 5px 139px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    background: none;
+    cursor: pointer;
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn2:hover{
+    color: black;
+    background: white;
+ 
+}
+.btn2::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 0%;
+    background-color: black;
+    z-index: -1;
+    transition: 0.8s;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    
+
+}
+.btn2:hover::before{
+    height: 180%;
+}
+/* footer section */
+footer{
+    background: black;
+}
+footer p{
+    color: grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
